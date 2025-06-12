@@ -1,0 +1,60 @@
+#no1
+# Masukkan nilai dari pengguna
+coding = int(input("Masukkan nilai coding (0-100): "))
+interview = input("Masukkan nilai interview (A/B/C/D): ").upper()
+
+# Menilai hasil tes coding
+if coding > 80:
+    hasil_coding = "LOLOS"
+elif 60 <= coding <= 80:
+    hasil_coding = "DIPERTIMBANGKAN"
+else:
+    hasil_coding = "GAGAL"
+
+# Menilai hasil interview
+if interview in ["A", "B"]:
+    hasil_interview = "LOLOS"
+else:
+    hasil_interview = "GAGAL"
+
+# Menentukan hasil akhir
+if hasil_coding in ["LOLOS", "DIPERTIMBANGKAN"] and hasil_interview == "LOLOS":
+    print("Selamat Kamu Berhasil Menjadi Calon Programmer")
+else:
+    print("Maaf Kamu Belum Berhasil Menjadi Calon Programmer")
+
+#output yang akan puncul setelah di run
+Masukkan nilai coding (0-100): 91
+Masukkan nilai wawancara (A/B/C/D): A
+Selamat Kamu Berhasil Menjadi Calon Programmer
+
+#no2
+# Input nomor punggung
+nomor = int(input("Masukkan nomor punggung pemain: "))
+
+# Daftar posisi
+posisi = []
+
+# Cek posisi berdasarkan aturan
+if nomor % 2 == 0:
+    posisi.append("Target Attacker")
+    if 50 <= nomor <= 100:
+        posisi.append("Berhak Dipilih Menjadi Captain Team")
+
+if nomor % 2 == 1:
+    posisi.append("Defender")
+    if nomor > 90:
+        posisi.append("Playmaker")
+    if nomor % 3 == 0 and nomor % 5 == 0:
+        posisi.append("Keeper")
+
+# Tampilkan hasil posisi
+print("Nomor punggung", nomor, "memiliki posisi:")
+for p in posisi:
+    print("-", p)
+
+#output yang akan puncul setelah di run
+Masukkan nomor punggung pemain: 99
+Nomor punggung 99 memiliki posisi:
+- Pembela
+- Pembuat permainan
